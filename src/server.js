@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
+import bankRoutes from './routes/bankRoutes.js';
 
 dotenv.config();
 
@@ -22,3 +23,5 @@ connectDB().then(() => {
         
     })
 })
+
+app.use('/api/v1', bankRoutes);
